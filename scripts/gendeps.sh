@@ -233,8 +233,8 @@ build_qemu () {
 
 steal_libucontext () {
     # HACK: use the libucontext built by qemu
-    cp "$BUILD_DIR/qemu/libucontext/libucontext.a" "$PREFIX/lib/libucontext.a"
-    cp "$BUILD_DIR/qemu/libucontext/include/libucontext.h" "$PREFIX/include/libucontext.h"
+    cp "$BUILD_DIR/qemu-4.0.0/libucontext/libucontext.a" "$PREFIX/lib/libucontext.a"
+    cp "$BUILD_DIR/qemu-4.0.0/libucontext/include/libucontext.h" "$PREFIX/include/libucontext.h"
 }
 
 build_spice_client () {
@@ -357,10 +357,10 @@ export MAKEFLAGS
 export PKG_CONFIG_PATH
 export PKG_CONFIG_LIBDIR
 
-check_env
-download_all
-build_qemu_dependencies
-build_qemu
+# check_env
+# download_all
+# build_qemu_dependencies
+#build_qemu
 steal_libucontext # should be a better way...
 build_spice_client
 fixup_all
